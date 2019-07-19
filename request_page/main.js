@@ -18,7 +18,6 @@ let btn_del = document.getElementsByClassName('btn_del');
 for (let index = 0; index < btn_del.length; index++) {
   (function (index) {
     array1[index] = (btn_del[index]);
-    console.log(array1[index]);
     btn_del[index].addEventListener("click", function () {
       let x = (array1[index].parentElement).parentElement;
       console.log(x);
@@ -72,3 +71,13 @@ btn_add.addEventListener('click', function () {
     });
     
 })
+
+var scrly = document.getElementById('table-scroll');
+var scrolly = 0.63 * window.screen.height;
+scrly.setAttribute("style", "height:" + scrolly + "px");
+console.log(scrly);
+
+var scrly = document.getElementById('table-scroll_1');
+var scrolly = 0.63 * window.screen.height;
+scrly.setAttribute("style", "height:" + scrolly + "px");
+console.log(scrly);
