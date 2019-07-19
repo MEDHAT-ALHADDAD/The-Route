@@ -4,7 +4,13 @@ from .forms import UserRegisterForm
 from django.contrib import messages
 
 def home(request):
-    return render(request,'index.html')
+    return render(request,'home.html')
+
+def rec(request):
+    return render(request,'request_page/rec.html')
+
+def results(request):
+    return render(request,'request_page/Results.html')
 
 def register(request):
     if request.method == "POST":
