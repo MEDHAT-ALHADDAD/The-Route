@@ -19,15 +19,49 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <title>Document</title>
+    <style type="text/css">
+        #myFooter{
+            clear: both;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            height: 200px;
+        }
+        body
+        {
+            margin-bottom: 70px;
+            padding-bottom: 200px;
+        }
+        html{
+            min-height: 100%;
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar
+        {
+            margin-bottom: 70px;
+        }
+        .form-group input
+        {
+            border-radius: 50px;
+        }
+        .nav-link
+        {
+            margin-left: 20px;
+        }
+    </style>
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Logo</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+
+        <div class="container">
+            <a class="navbar-brand" href="#">Logo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
@@ -37,9 +71,12 @@
                 <a class="nav-item nav-link " href="#">Login</a>
             </div>
         </div>
-    </nav>
+       </div>        
+      </nav>
+
 
     {% block content %}{% endblock %}
+
 
     <script type="module" src="{% static 'assets/js/main.js' %}"></script>
     <script type="module" src="{% static 'assets/js/jquery.js' %}"></script>
@@ -54,50 +91,51 @@
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
 
-</body>
-<footer id="myFooter" class="bg-dark text-light p-1">
-    <div class="container">
-        <div class="row p-3">
-            <div class="col-sm-3">
-                <h2 class="logo"><a href="#"> LOGO </a></h2>
-            </div>
-            <div class="col-sm-2">
-                <h5>Get started</h5>
-                <ul>
-                    <li><a class="fa-1x " href="#">Home</a></li>
-                    <li><a href="#">Sign up</a></li>
-                    <li><a href="#">Downloads</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-2">
-                <h5>About us</h5>
-                <ul>
-                    <li><a href="#">Company Info.</a></li>
-                    <li><a href="#">Contact us</a></li>
-                    <li><a href="#">Reviews</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-2">
-                <h5>Support</h5>
-                <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Help desk</a></li>
-                    <li><a href="#">Forums</a></li>
-                </ul>
-            </div>
-            <div class="col-sm-3">
-                <div class="social-networks">
-                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                    <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
-                </div>
-                <button type="button" class="btn btn-default text-light bg-info">Contact us</button>
-            </div>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <p>© 2019 Copyright Text </p>
-    </div>
-</footer>
 
+    </body>
+          <footer id="myFooter" class="bg-dark text-light p-1">
+            <div class="container">
+                <div class="row p-3">
+                    <div class="col-sm-3">
+                        <h2 class="logo"><a href="#"> LOGO </a></h2>
+                    </div>
+                    <div class="col-sm-2">
+                        <h5>Get started</h5>
+                        <ul>
+                            <li><a class="fa-1x " href="#">Home</a></li>
+                            <li><a href="#">Sign up</a></li>
+                             <li><a href="#">Downloads</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2">
+                        <h5>About us</h5>
+                        <ul>
+                            <li><a href="#">Company Info.</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#">Reviews</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2">
+                        <h5>Support</h5>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Help desk</a></li>
+                            <li><a href="#">Forums</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="social-networks">
+                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                        </div>
+                        <button type="button" class="btn btn-default text-light bg-info">Contact us</button>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                <p>© 2019 Copyright Text </p>
+            </div>
+            </div>
+            
+        </footer>
 </html>
