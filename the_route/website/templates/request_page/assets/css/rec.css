@@ -10,7 +10,7 @@ background: -webkit-linear-gradient(to bottom, #514A9D, #24C6DC);  /* Chrome 10-
 background: linear-gradient(to bottom, #514A9D, #24C6DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .head{float:left;width:100%;}
-.search-box{width:90%; margin:0 auto 40px; box-shadow:0px 0px 0 rgba(0,0,0,0.2);}
+.search-box{width:100%; margin:0 auto 20px; box-shadow:0px 0px 0 rgba(0,0,0,0.2);}
 .listing-block{background:#fff; height:500px; padding-top:20px; overflow-y:scroll;}
 .slimScrollDiv{width:41%!important;}
 .media {background:#fff; position:relative; margin-bottom:15px;}
