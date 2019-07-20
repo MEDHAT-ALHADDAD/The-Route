@@ -1,0 +1,90 @@
+/* body {
+  background-image: url("../img/back1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+} */
+
+body{background: #24C6DC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #514A9D, #24C6DC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #514A9D, #24C6DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+* {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size-adjust: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.list-group-item {
+  background: #eee;
+  margin: 0px;
+  padding: 0px 0px;
+}
+
+.sortable-ghost {
+  opacity: .6;
+}
+
+#table-wrapper, #table-wrapper_1 {
+  position: relative;
+}
+
+#table-scroll , #table-scroll_1 {
+  overflow: scroll;
+  margin-top: 20px;
+}
+
+#table-wrapper table {
+  width: 100%;
+}
+
+#table-wrapper table thead th .text {
+  position: relative;
+  width: 100%;
+}
+
+
+.btn-circle,
+.btn-circle-3d {
+  border-radius: 50% !important;
+}
+
+.btn-primary.btn-circle {
+  -webkit-box-shadow: 0px 0px 3px 1px #245580;
+  -moz-box-shadow: 0px 0px 3px 1px #245580;
+  box-shadow: 0px 0px 3px 1px #245580;
+}
+
+.btn-info.btn-circle {
+  -webkit-box-shadow: 0px 0px 3px 1px #28a4c9;
+  -moz-box-shadow: 0px 0px 3px 1px #28a4c9;
+  box-shadow: 0px 0px 3px 1px #28a4c9;
+}
+
+.btn-success.btn-circle {
+  -webkit-box-shadow: 0px 0px 3px 1px #3e8f3e;
+  -moz-box-shadow: 0px 0px 3px 1px #3e8f3e;
+  box-shadow: 0px 0px 3px 1px #3e8f3e;
+}
+
+.btn-danger.btn-circle {
+  -webkit-box-shadow: 0px 0px 3px 1px #b92c28;
+  -moz-box-shadow: 0px 0px 3px 1px #b92c28;
+  box-shadow: 0px 0px 3px 1px #b92c28;
+}
+
+.btn-warning.btn-circle {
+  -webkit-box-shadow: 0px 0px 3px 1px #e38d13;
+  -moz-box-shadow: 0px 0px 3px 1px #e38d13;
+  box-shadow: 0px 0px 3px 1px #e38d13;
+}
+
+.btn-default.btn-circle {
+  -webkit-box-shadow: 0px 0px 3px 1px #ccc;
+  -moz-box-shadow: 0px 0px 3px 1px #ccc;
+  box-shadow: 0px 0px 3px 1px #ccc;
+}

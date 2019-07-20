@@ -4,7 +4,7 @@ from .forms import UserRegisterForm
 from django.contrib import messages
 
 def home(request):
-    return render(request,'home.html')
+    return render(request,'Home.html')
 
 def rec(request):
     return render(request,'request_page/rec.html')
