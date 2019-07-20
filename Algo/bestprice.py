@@ -4,6 +4,6 @@ from datetime import datetime
 
 durations = []
 startdate = datetime(0,0,0)
-src = node()
+# src = node()
 nodes = []
 # TODO add durations of each node to the durations list
