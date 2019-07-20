@@ -1,8 +1,36 @@
+debug = False
+def debugPrint(thing):
+    if debug:
+        print(thing)
+
+
 import requests
 import flight
 import json
+import threading
 # from node import node
 apikey = "b87938c8dcmshce40b6d7556e1bap1afddfjsn495f23ba1e44"
+
+
+
+class costThread(threading.Thread):
+    def setinput(self, src="SFO", dst="JFK", date="2019-09-01", tmpcost = 0):
+        self.src = src
+        self.dst = dst
+        self.date = date
+        self.tmpcost = tmpcost
+        self.totalcost = -1
+    
+    def run(self):
+        self.totalcost = self.tmpcost + calccost(self.src, self.dst, self.date)
+
+    def getTotalCost(self):
+        return self.totalcost
+
+
+
+
+
 
 
 class replywrapper:
@@ -32,14 +60,17 @@ headers={
   }
 
 
-def calccost(date="2019-09-01" ,src="SFO-sky", dst="JFK-sky"):
+def calccost(src="SFO", dst="JFK", date="2019-09-01"):
+    src = src + "-sky"
+    dst = dst + "-sky"
+    debugPrint("checking {} to {}".format(src, dst))
     url = """https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/{}/{}/{}""".format(src,dst,date)
-    print(url)
+    # debugPrint(url)
     r = requests.get(url, headers=headers)
+    # debugPrint(r.text)
+    r = replywrapper(r.text)
+    debugPrint(str(r) + " from {} to {}".format(src, dst))
 
-    print(replywrapper(r.text))
-    print(r.text)
-
-
-    return flight.flight(0,0,0,0)
-calccost(0)
+    return r.price
+    # return flight.flight(0,0,0,0)
+            
