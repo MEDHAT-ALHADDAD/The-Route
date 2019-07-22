@@ -1,0 +1,19 @@
+{
+  "name": "m",
+  "version": "1",
+  "description": "m",
+  "main": "main.js",
+  "repository": "https://github.com/MEDHAT-ALHADDAD/Code_Geist_01.git",
+  "author": "m",
+  "license": "mit",
+  "private": null,
+  "dependencies": {
+    "@types/sortablejs": "^1.7.2",
+    "fontawesome": "^5.6.3",
+    "jshint": "^2.10.2",
+    "sortablejs": "^1.10.0-rc3"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0"
+  }
+}
