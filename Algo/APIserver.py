@@ -1,17 +1,11 @@
-debug = False
-def debugPrint(thing):
-    if debug:
-        print(thing)
-infinity = 90000000
-
 import requests
 import flight
 import json
 import threading
 import datetime
 import node
-# from node import node
-apikey = "b87938c8dcmshce40b6d7556e1bap1afddfjsn495f23ba1e44"
+import time
+from CONST import infinity, debug, debugPrint, APIheaders, cooldowntime
 
 
 
@@ -35,16 +29,21 @@ class costThread(threading.Thread):
 
 class replywrapper:
     def __init__(self, jsonreply):
+        self.tripexist = False
+        self.valid = False
         self.response = json.loads(jsonreply)
-        if len(self.response["Quotes"]) == 0:
-            self.valid=False
+        if "Quotes" not in self.response:
             return
         self.valid = True
+        self.parse()
+
+    def parse(self):
+        if len(self.response["Quotes"]) == 0:
+            return
+        self.tripexist = True
         self.price = self.response["Quotes"][0]["MinPrice"]
         self.carrierID, self.carrierName = self.__getcarrier()
         self.currency = self.response["Currencies"][0]["Code"]
-
-
     def __str__(self):
         return "carrier {}:{} had the best price of {}{}".format(self.carrierName, self.carrierID, self.price, self.currency)
     def __getcarrier(self):
@@ -57,26 +56,26 @@ class replywrapper:
 
 
 
-headers={
-    "X-RapidAPI-Host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
-    "X-RapidAPI-Key": apikey,
-    "Content-Type": "application/x-www-form-urlencoded"
-  }
-
 
 def calccost(src:node.node, dst:node.node, date:datetime.datetime) -> flight.flight:
     src = src.airport + "-sky"
     dst = dst.airport + "-sky"
-    debugPrint("checking {} to {}".format(src, dst))
+    # debugPrint("checking {} to {}".format(src, dst))
     url = """https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/{}/{}/{}""".format(src,dst,date.isoformat('-')[0:10])
-    debugPrint(url)
-    r = requests.get(url, headers=headers)
+    # debugPrint(url)
+    r = requests.get(url, headers=APIheaders)
     # debugPrint(r.text)
-    r = replywrapper(r.text)
+    rw = replywrapper(r.text)
 
-    if(r.valid):
-        debugPrint(str(r) + " from {} to {}".format(src, dst))
+    while(not rw.valid):
+        debugPrint(rw.response)
+        time.sleep(cooldowntime)
+        r = requests.get(url, headers=APIheaders)
+        rw = replywrapper(r.text)
+    if(rw.tripexist):
+        # debugPrint(str(r) + " from {} to {}".format(src, dst))
         # return r.price
-        return flight.flight(src, dst, r.price, date,r.carrierName)
-    return flight.flight(src,dst,infinity,date,"")
+        return flight.flight(src, dst, rw.price, date,rw.carrierName)
+    else:
+        return flight.flight(src,dst,infinity,date,"")
             
