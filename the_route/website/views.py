@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .forms import UserRegisterForm
 from django.contrib import messages
 
-def home(request):
+def Home(request):
     return render(request,'Home.html')
 
 def rec(request):

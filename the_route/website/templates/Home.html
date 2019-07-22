@@ -1,19 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
     <style type="text/css">
-         body
-         {
-        font-family: noodle;
-        background-color: #3781b3;
-         }
-         .container{
-          width: 70%;
-         }
+         
+        
          .jumbotron{
             width: 100%;
-            background-color: #9898a0;
-            margin-top: 110px;
-            margin-bottom: 110px;
+            /* background-color: #9898a0; */
+            margin-top: 30px;
+            margin-bottom: 30px;
             text-align: center;
             border-radius: 50px;
          }
@@ -28,10 +22,10 @@
             margin-right:10px;
             margin-left: 10px;
          }
-         .form-control{
+          .form-control{
              border-radius: 50px
          }
-         .btn-circle {
+          .btn-circle {
               width: 30px;
               height: 30px;
               margin-top: 20px;
@@ -40,7 +34,7 @@
               font-size: 12px;
               background: red;
               padding: 5px;
-          }
+          } 
 
          @font-face
          {
@@ -91,9 +85,9 @@
         }
 
         /* Hide the images by default */
-        .mySlides {
+        /*.mySlides {
           display: none;
-        }
+        }*/
 
         /* Next & previous buttons */
         .prev, .next {
@@ -295,7 +289,8 @@
 
         <div class="mySlides fade">
           <div class="numbertext">2 / 3</div>
-          <img src="https://bitchenstickerz.com/wp-content/uploads/2017/08/NarutoLeaf.jpg">
+          <img class="d-flex align-self-start"
+                            src="https://cdn.londonandpartners.com/assets/73295-640x360-london-skyline-ns.jpg">
           <div class="text">Caption Two</div>
         </div>
 
@@ -309,6 +304,8 @@
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
       </div>
+      
+      
       <br>
 
       <!-- The dots/circles -->
@@ -320,8 +317,7 @@
 
 </div>
  {% load static %}
- <script src = "{% static 'the_route/team.js' %}">
-
- </script>
+ 
+ <script type="module" src="{% static 'assets/js/team.js' %}"></script>
 
 {% endblock content %}
