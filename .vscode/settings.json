@@ -1,6 +1,6 @@
 {
-    "python.pythonPath": "C:\\Users\\Medha\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe",
-    "python.linting.pylintEnabled": false,
+    "python.pythonPath": "C:\\Users\\moham\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe",
+    "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
-    "python.linting.mypyEnabled": true
+    "python.linting.mypyEnabled": false
 }
