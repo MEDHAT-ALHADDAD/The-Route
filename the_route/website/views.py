@@ -10,8 +10,11 @@ import datetime
 
 
 
-def Home(request):
-    return render(request,'Home.html')
+def home(request):
+    return render(request,'home.html')
+
+def contactus(request):
+    return render(request,'contactus.html')
 
 def rec(request):
     return render(request,'request_page/rec.html')
