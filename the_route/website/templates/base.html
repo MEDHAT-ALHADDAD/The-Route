@@ -26,46 +26,47 @@
 
     <title>Document</title>
     <style type="text/css">
-        .container{
-         }
-         .jumbotron{
-            width: 100%;
-            background-color: #9898a0;
-            margin-top: 110px;
-            margin-bottom: 110px;
-            text-align: center;
-            border-radius: 50px;
-         }
          input
          {
             margin-left: 10px;
+            display: inline-block;
+            float: left;
          }
          label{
-            font-size: 30px;
+            font-size: 20px;
             margin-top:20px;
             margin-right:10px;
             margin-left: 10px;
+            display: inline-block;
+            float: left;
+            clear: left;
+            text-align:right;
          }
          .form-control{
-             border-radius: 50px
+             border-radius: 50px;
+             display: inline-block;
+            float: left;
+            clear: left;
+            width: 300px;
          }
          .btn-circle {
               width: 30px;
               height: 30px;
-              margin-top: 20px;
+              margin-top: 50px;
+              margin-left: 20px;
               border-radius: 25px;
               text-align: center;
               font-size: 12px;
               background: red;
+              display: block;
               padding: 5px;
           }
 
          .form-inline .form-control {
-          font-size: 23px;
+                font-size: 20px;
                 display: inline-block;
                 height: 40px;
-                width: 300px;
-                vertical-align: middle;
+                width: 200px;
           }
          h1 
          {
@@ -261,6 +262,10 @@
             button:disabled {
               cursor: not-allowed;
               pointer-events: all !important;
+            }
+            
+            .yo{
+                margin-left: 16em;
             }
     </style>
 </head>
