@@ -2,34 +2,7 @@
 {% block content %}
 {% load static %}
 <style>
- .reg-title {
-        text-align: center;
-        margin-bottom: 30px;
-        padding-bottom: 10px;
-        color: #404040;
-        position: relative;
-    }
-    .reg-title:after {
-        content: '';
-        background: #404040;
-        width: 20%;
-        height: 3px;
-        position: absolute;
-        left: 50%;
-        top: 100%;
-        transform: translate(-50%, 100%);
-    }
-    .reg-wrapper {
-        box-shadow: 0px 0px 5px 1px #ccc;
-        background-color: rgba( 255,255, 255,1);
-        padding: 30px;
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.5);
-        margin: 50px;
-    }
-    .reg-wrapper:hover{
-        box-shadow: 0px 0px 40px 16px rgba(18, 18, 18, 0.7)
-    }
+
     /* NEW */
     .banner{
         position: absolute;
@@ -55,25 +28,7 @@
         width: 100vw;
         height: 170vh;
     }
-    .full-height {
-        height: 150vh; 
-    }
-    .pargraphe{
-        position: relative;
-        color: white;
-        font-size: 26px;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%,-50%);
-        margin-right: 100px;
-    }
-    /* .signform-div{
-        background-color: white;
-    }
-    .pargraphe-div{ 
-        background-color: #b84e4e;
-        padding: 50px;
-    } */
+   
 </style>
 <body>
 	<div class="main-img-div">
@@ -81,9 +36,11 @@
 	</div>
     <div class="container">
 		<div class="row">
-			<div class="col-lg-6">
+			<div class="col-lg-7 mt-5 pt-5 text-light">
+				<h1>Contact us</h1>
+				<p class="p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates dolorum vero doloremque officia hic facere, quas praesentium facilis quam modi quod? Voluptates, non quia. Repellendus mollitia obcaecati molestiae vitae quae officia porro amet repellat provident asperiores earum ad nostrum debitis possimus alias, atque velit vero culpa ex. Quia maxime non, et atque facere dolores voluptate vitae aspernatur ipsum assumenda. Sapiente quod illum delectus neque maxime, officia architecto? Officia atque dolores aut aspernatur suscipit voluptatem nemo dolorum dolor nobis doloremque omnis ut eum tempore debitis tenetur consequuntur, quo enim voluptatum sit accusamus, pariatur excepturi quos voluptatibus. Quod quasi sunt minus autem?</p>
 			</div>
-			<div class="col-lg-6 col-sm-8">
+			<div class="col-lg-5">
 				<section class="section2"> 
 					<div class="contactform">
 					<h5>Drop us a line...</h5>
@@ -95,10 +52,6 @@
 							<label for="email">
 								<i class="cntfrmicn fa fa-envelope"></i>
 								<input name="email" class="form-fields" type="text">
-							</label>
-							<label for="contact">
-								<i class="cntfrmicn fa fa-phone"></i>
-								<input name="contact" class="form-fields" type="text">
 							</label>
 							<label for="textarea">
 								<i class="cntfrmicn fa fa-comment"></i>

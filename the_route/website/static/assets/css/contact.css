@@ -61,7 +61,7 @@ input:focus, textarea:focus, keygen:focus, select:focus {
 .section2 .contactform input.form-fields,
 .section2 .contactform button.form-fields,
 .section2 .contactform textarea.form-fields {
-    padding: 0 0 0 40px;
+    padding: 0 0 0 0px;
     display: block;
     box-sizing: border-box;
     width: 350px;
