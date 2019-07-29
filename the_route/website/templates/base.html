@@ -269,7 +269,7 @@
 
     <!-- navbar to be replaced by the one in layout.html -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="/Home"><img src="{% static 'assets/img/logo/1.jpg' %}" alt="LOGO" style="max-width: 100px; max-height: 100px"></a>
+            <a class="navbar-brand" href="/Home"><img src="{% static 'assets/img/logo/logo.png' %}" alt="LOGO" style="max-width: 100px; max-height: 100px"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -317,34 +317,34 @@
 
 </body>
 
-<footer id="myFooter" class="bg-dark text-light p-1">
+<footer id="myFooter" class="bg-dark text-light p-0">
     <div class="container-fluid">
         <div class="row " style="margin-bottom: 0vw">
-            <div class="col-lg-3 col-sm-12">
-                <h2 class="logo"><a href="#"> <img src="{% static 'assets/img/logo/1.jpg' %}" alt="LOGO" style="max-width: 200px; max-height: 200px"> </a></h2>
+            <div class="col-3">
+                <h2 class="logo"><a href="#"> <img src="{% static 'assets/img/logo/logo.png' %}" alt="LOGO" style="max-width: 200px; max-height: 200px"> </a></h2>
             </div>
-            <div class="col-lg-2 col-sm-12">
+            <div class="col-2">
                 <h5>Get started</h5>
                 <ul>
                     <li><a class="fa-1x " href="#">Home</a></li>
                     <li><a href="#">Sign up</a></li>
                 </ul>
             </div>
-            <div class="col-lg-2 col-sm-12">
+            <div class="col-2">
                 <h5>About us</h5>
                 <ul>
                     <li><a href="#">Company Info.</a></li>
                     <li><a href="{% url 'contactus' %}">Contact us</a></li>
                 </ul>
             </div>
-            <div class="col-lg-2 col-sm-12">
+            <div class="col-2">
                 <h5>Support</h5>
                 <ul>
                     <li><a href="#">FAQ</a></li>
                     <li><a href="#">Forums</a></li>
                 </ul>
             </div>
-            <div class="col-lg-3 col-sm-12">
+            <div class="col-3">
                 <div class="social-networks">
                     <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
                     <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
