@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
     <link rel="stylesheet" type="text/css" media="screen" href="{% static 'assets/css/main.css'  %}" />
     <link rel="stylesheet" type="text/css" media="screen" href="{% static 'assets/css/rec.css'  %}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'assets/css/contact.css'  %}" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
     integrity="sha384- 
     fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" 
@@ -26,7 +27,6 @@
     <title>Document</title>
     <style type="text/css">
         .container{
-          width: 70%;
          }
          .jumbotron{
             width: 100%;
@@ -223,6 +223,7 @@
             width: 100%;
             bottom: 0;
             height: 200px;
+            
         }
         body
         {
@@ -264,7 +265,7 @@
     </style>
 </head>
 
-<body>
+<body class="m-0">
 
     <!-- navbar to be replaced by the one in layout.html -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -277,7 +278,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                            <a class="nav-item nav-link active" href="/Home">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-item nav-link active" href="/home">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                             <a class="nav-item nav-link" href="/rec">Recommendations</a>
@@ -287,7 +288,7 @@
                     </li>
                 </ul>
               {% if user.is_authenticated %}
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin: 3px"><a class="nav-item nav-link" style="color: white" href="{% url 'logout' %}"> Logout </a></button>
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin: 3px"><a class="nav-item nav-link" style="color: white" href="{% url 'home' %}"> Logout </a></button>
               {% else %}
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin: 3px"><a class="nav-item nav-link" style="color: white" href="{% url 'register' %}"> Register </a></button>
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin: 3px"><a class="nav-item nav-link" style="color: white" href="{% url 'login' %}"> Login </a></button>
@@ -333,7 +334,7 @@
                 <h5>About us</h5>
                 <ul>
                     <li><a href="#">Company Info.</a></li>
-                    <li><a href="#">Contact us</a></li>
+                    <li><a href="{% url 'contactus' %}">Contact us</a></li>
                 </ul>
             </div>
             <div class="col-lg-2 col-sm-12">
@@ -349,14 +350,14 @@
                     <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
                     <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
                 </div>
-                <button type="button" class="btn btn-default text-light bg-info">Contact us</button>
+                <button type="button" class="btn btn-default text-light bg-info" href="#" >Contact us</button>
             </div>
         </div>
     </div>
-    <div class="footer-copyright">
-        <p>© 2019 Copyright Text </p>
-    </div>
     
   </footer>
+  <div class="footer-copyright bg-dark">
+      <p class="text-light text-center">© 2019 Copyright Text </p>
+  </div>
   
 </html>
