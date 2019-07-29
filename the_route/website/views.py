@@ -1,16 +1,68 @@
 from django.shortcuts import render,redirect
-from django.http import HttpResponse
+from django.http import HttpResponse,JsonResponse
 from .forms import UserRegisterForm
 from django.contrib import messages
+from django.shortcuts import render_to_response
+from django.views.decorators.csrf import csrf_exempt
+import json
 
-def home(request):
-    return render(request,'home.html')
+
+
+
+def Home(request):
+    return render(request,'Home.html')
 
 def rec(request):
     return render(request,'request_page/rec.html')
 
+@csrf_exempt
 def results(request):
-    return render(request,'request_page/Results.html')
+    # page will not update data or rerender for now
+    # data accepted by the result page sotred in list of dicts (res)
+    res = [
+        {"no":"1","From":"Cairo","To":"London","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+        {"no":"2","From":"London","To":"paris","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+        {"no":"3","From":"paris","To":"Rome","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+        {"no":"4","From":"Rome","To":"Moscow","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+        {"no":"5","From":"Moscow","To":"Cairo","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+        {"no":"6","From":"Cairo1","To":"London1","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+        {"no":"7","From":"Paris1","To":"Rome1","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+        {"no":"8","From":"Rome1","To":"LA","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+        {"no":"9","From":"LA","To":"Cairo","Flight_No":"@123","Date":"12/03/2020","Price":"500$"}
+        ]
+    city = []
+    for result in res:
+        city.append(result['From'])
+
+    if request.method == "POST" and request.is_ajax():
+        message = "Ajax"
+        val = request.POST.get('Cities_Results', '')
+        Cities_list = json.loads(val)
+        # data returned from the result page >> sotred in list (Cities_list) ['london','cairo','paris','moscow']
+        for i in Cities_list:
+            print(i)
+        # assigned new values to res
+        res = [
+            {"no":"1","From":"Cairo","To":"London","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+            {"no":"2","From":"London","To":"paris","Flight_No":"@123","Date":"12/03/2020","Price":"500$"}
+            ]
+        city = []
+        for result in res:
+            city.append(result['From'])
+        print(city)
+        context = {
+        "results": res,
+        "shortcity": city
+        }
+        return JsonResponse(request,'request_page/Results.html',context)
+    
+    else:
+        message = "Not Ajax"
+        context = {
+            "results": res,
+            "shortcity": city
+            }
+        return render(request,'request_page/Results.html',context)
 
 def register(request):
     if request.method == "POST":
