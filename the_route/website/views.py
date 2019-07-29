@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.shortcuts import render_to_response
 from django.views.decorators.csrf import csrf_exempt
 import json
-from Algo import Algo, node, flight, CONST
+#from Algo import Algo, node, flight, CONST
 import datetime
 
 
