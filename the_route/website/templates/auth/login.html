@@ -1,21 +1,121 @@
 {% extends "base.html" %}
 {% block content %}
-    {% load crispy_forms_tags %}
-    <div class="content-section container">
-            <form method="POST" class="login-form">
-                {% csrf_token %}
-                <fieldset class="form-group">
-                    <legend class="border-bottom mb-4">Log In</legend>
-                    {{ form|crispy }}
-                </fieldset>
-                <div class="form-group">
-                    <button class="btn btn-outline-info" type="submit">Login</button>
+<!-- Style of the page -->
+<style>
+    .reg-title {
+        text-align: center;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+        color: #404040;
+        position: relative;
+    }
+    .reg-title:after {
+        content: '';
+        background: #404040;
+        width: 20%;
+        height: 3px;
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        transform: translate(-50%, 100%);
+    }
+    .reg-wrapper {
+        box-shadow: 0px 0px 5px 1px #ccc;
+        background-color: rgba( 255,255, 255,1);
+        padding: 30px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin: 50px;
+    }
+    .reg-wrapper:hover{
+        box-shadow: 0px 0px 40px 16px rgba(18, 18, 18, 0.7)
+    }
+    /* NEW */
+    .banner{
+        position: absolute;
+        /* top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0; */
+        height: 100vh;
+        width: 100vw;
+        object-fit: cover;
+        /* z-index: -1; */
+    }
+    .main-img-div{
+        width: 100vw;
+        position: relative;
+        /* z-index: -1; */
+    }
+
+    .main-img-div:after {
+        content: '';
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.7);
+        width: 100vw;
+        height: 100vh;
+    }
+    .full-height {
+        height: 100vh; 
+    }
+    .pargraphe{
+        position: relative;
+        color: white;
+        font-size: 26px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        margin-right: 100px;
+    }
+    /* .signform-div{
+        background-color: white;
+    }
+    .pargraphe-div{ 
+        background-color: #b84e4e;
+        padding: 50px;
+    } */
+</style>
+
+<div class="main-img-div">
+    <img src="https://www.tokkoro.com/picsup/5228117-mountain-sky-lake-bay-water-blue-dark-dusk-pastel-long-exposure-landscape-nature-coast-beach-cloud-sunset-ocean-sea-tree-creative-commons-images.jpg" class="banner" alt="banner"/>
+</div>
+<div class="row justify-content-center align-items-center full-height">
+
+    <div class="col-8 pargraphe-div full-height">
+        <p class="pargraphe">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+             It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+             It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+              and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        </p>
+    </div>
+
+    <div class="col-4 signform-div">
+        <!-- Login Form -->
+        {% load crispy_forms_tags %}
+        <div class="content-section container reg-wrapper">
+                <form method="POST" class="login-form" action="">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                            <div class="reg-intro">
+                                <h1 class="reg-title">Welcome Back!</h1>
+                            </div>
+                        {{ form|crispy }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Login</button>
+                    </div>
+                </form>
+                <div class="border-top pt-3">
+                    <small class="text-muted">
+                        Need An Account? <a class="ml-2" href="../register">Sign Up Now</a>
+                    </small>
                 </div>
-            </form>
-            <div class="border-top pt-3">
-                <small class="text-muted">
-                    Need An Account? <a class="ml-2" href="../register">Sign Up Now</a>
-                </small>
             </div>
-        </div>
+    </div>
+
+</div>    
 {% endblock content %}
+
