@@ -22,7 +22,7 @@
  .btn-circle {
       width: 30px;
       height: 30px;
-      margin-top: 20px;
+      margin-top: 40px;
       border-radius: 25px;
       text-align: center;
       font-size: 12px;
@@ -34,7 +34,7 @@
   font-size: 23px;
         display: inline-block;
         height: 40px;
-        width: 300px;
+        /* width: 300px; */
         vertical-align: middle;
   }
  h1 
@@ -176,7 +176,7 @@ img{
 
 .form-inline .btn-lg
 {
-  margin-left: 42%;
+  /* margin-left: 42%; */
   margin-top: 50px;
 }
 
