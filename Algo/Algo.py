@@ -12,7 +12,7 @@ from CONST import debugPrint, infinity, THREADIT, TURBOMODE, debug
 # IMPORTANT
 # This method is the only way to calculate the cost from this module
 # ALL other methods should not be called
-def maincalccost(start:node.node, mid, end:node.node, startdate:datetime.datetime):
+def maincalccost(start:node.node, mid, end:node.node, startdate:datetime.datetime) -> (int, list) :
     global startCity, endCity
     startCity = start
     endCity = end
@@ -127,5 +127,3 @@ def test():
     end = time.time()
     print("time taken to run algorithm is {} seconds".format(end - start))
     debugPrint("number of function calls: {}".format(counter))
-if debug:
-    test()
