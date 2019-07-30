@@ -13,5 +13,5 @@ def debugPrint(thing):
     if debug:
         print(thing)
 
-citytoairport={"Atlanta":"ATL","Chicago":"ORD","Dubai":"DXB","Los Angeles":"LAX","London":"LHR", "Tokyo":"HND"}
+citytoairport={"atlanta":"ATL","chicago":"ORD","dubai":"DXB","los angeles":"LAX","london":"LHR", "tokyo":"HND"}
 airporttocity={v: k for k, v in citytoairport.items()}
