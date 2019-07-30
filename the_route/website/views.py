@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.shortcuts import render_to_response
 from django.views.decorators.csrf import csrf_exempt
 import json
-#from Algo import Algo, node, flight, CONST
+from .Algo import Algo, node, flight, CONST
 import datetime
 
 
@@ -24,18 +24,19 @@ def results(request):
     # page will not update data or rerender for now
     # data accepted by the result page sotred in list of dicts (res)
 
-    res = [
-        {"no":"1","From":"Cairo","To":"London","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
-        {"no":"2","From":"London","To":"paris","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
-        {"no":"3","From":"paris","To":"Rome","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
-        {"no":"4","From":"Rome","To":"Moscow","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
-        {"no":"5","From":"Moscow","To":"Cairo","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
-        {"no":"6","From":"Cairo1","To":"London1","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
-        {"no":"7","From":"Paris1","To":"Rome1","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
-        {"no":"8","From":"Rome1","To":"LA","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
-        {"no":"9","From":"LA","To":"Cairo","Flight_No":"@123","Date":"12/03/2020","Price":"500$"}
-        ]
-    city = []
+    res = []
+    # res = [
+    #     {"no":"1","From":"Cairo","To":"London","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+    #     {"no":"2","From":"London","To":"paris","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+    #     {"no":"3","From":"paris","To":"Rome","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+    #     {"no":"4","From":"Rome","To":"Moscow","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+    #     {"no":"5","From":"Moscow","To":"Cairo","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+    #     {"no":"6","From":"Cairo1","To":"London1","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+    #     {"no":"7","From":"Paris1","To":"Rome1","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+    #     {"no":"8","From":"Rome1","To":"LA","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+    #     {"no":"9","From":"LA","To":"Cairo","Flight_No":"@123","Date":"12/03/2020","Price":"500$"}
+    #     ]
+    city = ["atlanta","chicago","dubai","los angeles","london", "tokyo"]
     for result in res:
         city.append(result['From'])
 
