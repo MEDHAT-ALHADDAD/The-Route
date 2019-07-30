@@ -84,13 +84,17 @@ html{
 {
     margin-left: 20px;
 }
+.navbar-nav li a:hover, .navbar-nav li.active a {
+     color: white !important;
+    transition: all 0.4s ease;
+}
 button {
   text-decoration: none;
    }
 
 button:hover, button:focus {
     
-    color: inherit;
+    color: transparent;
     text-decoration: none;
     cursor: pointer;
     outline: none; }
