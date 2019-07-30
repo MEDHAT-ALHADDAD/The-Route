@@ -659,8 +659,8 @@ h6 {
 ===*/
 /*======================== Section & Selection Css ===============================*/
 section {
-  padding-top: 6.25em;
-  padding-bottom: 6.25em;
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
   position: relative; }
 
 ::selection {

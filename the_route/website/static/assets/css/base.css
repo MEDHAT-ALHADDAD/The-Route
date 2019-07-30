@@ -18,11 +18,13 @@
       width: 30px;
       height: 30px;
       border-radius: 25px;
-      margin-top: 4.3em;
-      font-size: 14px;
+      margin-top: 3em;
+      font-size: 20px;
+      float: left;
       padding-bottom: 20px;
       padding-right: 20px;
-      background: red;
+      color: red;
+      background: transparent;
   }
 
  .form-inline .container-fluid .form-control {
