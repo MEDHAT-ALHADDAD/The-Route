@@ -29,7 +29,7 @@ urlpatterns = [
     path("", include("website.urls")),
     path('admin/', admin.site.urls),
     path('login/', auth_views.LoginView.as_view(template_name='auth/login.html'), name='login'),
-    path('logout/', auth_views.LogoutView.as_view(template_name='auth/logout.html'), name='logout'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='home.html'), name='logout'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += staticfiles_urlpatterns()
