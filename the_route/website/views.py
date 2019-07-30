@@ -65,7 +65,7 @@ def results(request):
         "results": res,
         "shortcity": city
         }
-        return JsonResponse(request,'request_page/Results.html',context)
+        return render(request,'request_page/Results.html',context)
     
     else:
         message = "Not Ajax"
