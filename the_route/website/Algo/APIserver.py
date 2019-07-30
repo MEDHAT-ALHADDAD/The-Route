@@ -1,11 +1,11 @@
 import requests
-import flight
+from . import flight
 import json
 import threading
 import datetime
-import node
+from . import node
 import time
-from CONST import infinity, debug, debugPrint, APIheaders, cooldowntime
+from . import CONST
 
 
 
@@ -63,19 +63,19 @@ def calccost(src:node.node, dst:node.node, date:datetime.datetime) -> flight.fli
     # debugPrint("checking {} to {}".format(src, dst))
     url = """https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/{}/{}/{}""".format(src,dst,date.isoformat('-')[0:10])
     # debugPrint(url)
-    r = requests.get(url, headers=APIheaders)
+    r = requests.get(url, headers=CONST.APIheaders)
     # debugPrint(r.text)
     rw = replywrapper(r.text)
 
     while(not rw.valid):
-        debugPrint(rw.response)
-        time.sleep(cooldowntime)
-        r = requests.get(url, headers=APIheaders)
+        CONST.debugPrint(rw.response)
+        time.sleep(CONST.cooldowntime)
+        r = requests.get(url, headers=CONST.APIheaders)
         rw = replywrapper(r.text)
     if(rw.tripexist):
         # debugPrint(str(r) + " from {} to {}".format(src, dst))
         # return r.price
         return flight.flight(src, dst, rw.price, date,rw.carrierName)
     else:
-        return flight.flight(src,dst,infinity,date,"")
+        return flight.flight(src,dst,CONST.infinity,date,"")
             
