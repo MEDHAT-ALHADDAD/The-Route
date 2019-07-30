@@ -27,7 +27,7 @@
         background-color: rgba( 255,255, 255,1);
         padding: 30px;
         border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 1);
         margin: 50px;
     }
     .reg-wrapper:hover{
@@ -48,12 +48,14 @@
     .main-img-div{
         width: 100vw;
         position: relative;
+        background-size: cover;
+        background-position: center;
         /* z-index: -1; */
     }
 
-    .main-img-div:after {
+    .whr:after {
         content: '';
-        position: absolute;
+        position: relative;
         background-color: rgba(0, 0, 0, 0.7);
         width: 100vw;
         height: 100vh;
@@ -70,6 +72,12 @@
         transform: translate(-50%,-50%);
         margin-right: 100px;
     }
+    .back{
+        background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://www.tokkoro.com/picsup/5228117-mountain-sky-lake-bay-water-blue-dark-dusk-pastel-long-exposure-landscape-nature-coast-beach-cloud-sunset-ocean-sea-tree-creative-commons-images.jpg);
+        background-position: center;
+        background-size: cover;
+
+    }
     /* .signform-div{ 
         /* background-color: white; */
         /* width:500px;     */
@@ -80,10 +88,7 @@
     } */
 </style>
 
-<div class="main-img-div">
-    <img src="https://www.tokkoro.com/picsup/5228117-mountain-sky-lake-bay-water-blue-dark-dusk-pastel-long-exposure-landscape-nature-coast-beach-cloud-sunset-ocean-sea-tree-creative-commons-images.jpg" class="banner" alt="banner"/>
-</div>
-<div class="row justify-content-center align-items-center full-height">
+<div class="row justify-content-center align-items-center back">
 
     <div class="col-8 pargraphe-div full-height">
         <p class="pargraphe">
@@ -98,17 +103,17 @@
 
     <div class="col-4 signform-div">
         <!-- SIGN UP FORM -->
-        <form method="POST" action="" class="reg-wrapper">
+        <form method="POST" style="color:black;" action="" class="reg-wrapper">
             {% csrf_token %}
             {% load crispy_forms_tags %}
-            <fieldset class="form-group">
+            <fieldset class="form-group" style="color:black;">
                 <div class="reg-intro">
                     <h1 class="reg-title">Sign Up For Free!</h1>
                 </div>
                 {{ form |crispy }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                <button class="btn btn-primary" type="submit">Sign Up</button>
             </div>
             <div class="border-top pt-3">
                 <small class="text-muted">

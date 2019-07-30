@@ -28,21 +28,21 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-5">
-                            <label style="margin-top: 0px;">Origin</label><input  type="text" class="form-control" name="team_name" placeholder="" required>
+                            <label style="margin-top: 0px;">Leaving From</label><input  type="text" class="form-control" name="team_name" placeholder="Starting City" required>
                             <label>Date</label> <input type="date" class = "form-control" name="leader_name" placeholder="" required> 
                         </div>
                         <div class="col-5">
-                            <label style="margin-top: 0px;">Adults</label><input type="number" class="form-control" placeholder="(16+)">
-                            <label>Children</label><input type="number" class="form-control" placeholder="0-15">
+                            <label style="margin-top: 0px;">No. of Adults</label><input type="number" min="0" required class="form-control" placeholder="(16+)">
+                            <label>No. of Children</label><input type="number" min="0" required class="form-control" placeholder="0-15">
                         </div>
                     </div> 
               
                         <div class="row">
                                 <div class="col-5">
-                                    <label>City</label><input type="text" class = "form-control" name="1_member_name" placeholder="" required>
+                                    <label>City</label><input type="text" class = "form-control" name="1st_City" placeholder="" required>
                                 </div>
                                 <div class="col-5">
-                                    <label>Duration</label><input type="text" class = "form-control" required title="" name="1_member_phone" required>
+                                    <label>Duration</label><input type="number" class = "form-control" placeholder="In days" name="1st_Duration" required>
                                 </div>
                             </div>
                
@@ -53,7 +53,7 @@
                                     <label>City</label><input type="text" class = "form-control" name="1_member_name" placeholder="" required>
                                 </div>
                                 <div class="col-5">
-                                    <label>Duration</label><input type="text" class = "form-control" required title="" name="1_member_phone" required>
+                                    <label>Duration</label><input type="number" placeholder="In days" class = "form-control" title="" name="1_member_phone" required>
                                 </div>
                                 <div class="col-2">
                                       <button type="button" class="btn btn-circle myBtn" name="hide1" onclick="hide(this)">
@@ -67,10 +67,10 @@
                <div class ="d-none" name="Label2">
                         <div class="row">
                                 <div class="col-5">
-                                    <label>City</label><input type="text" class = "form-control" name="1_member_name" placeholder="" required>
+                                    <label>City</label><input type="text" class = "form-control" name="1_member_name" placeholder="">
                                 </div>
                                 <div class="col-5">
-                                    <label>Duration</label><input type="text" class = "form-control" required title="" name="1_member_phone" required>
+                                    <label>Duration</label><input type="number" placeholder="In days" class = "form-control" title="" name="1_member_phone">
                                 </div>
                                 <div class="col-2">
                                       <button type="button" class="btn  btn-circle" name="hide2" onclick="hide(this)">
@@ -83,10 +83,10 @@
                <div class ="d-none" name="Label3">
                         <div class="row">
                                 <div class="col-5">
-                                    <label>City</label><input type="text" class = "form-control" name="1_member_name" placeholder="" required>
+                                    <label>City</label><input type="text" class = "form-control" name="1_member_name" placeholder="">
                                 </div>
                                 <div class="col-5">
-                                    <label>Duration</label><input type="text" class = "form-control" required title="" name="1_member_phone" required>
+                                    <label>Duration</label><input type="number" placeholder="In days" class = "form-control" title="" name="1_member_phone">
                                 </div>
                                 <div class="col-2">
                                       <button type="button" class="btn  btn-circle" name="hide3" onclick="hide(this)">
@@ -99,10 +99,10 @@
                <div class ="d-none" name="Label4">
                     <div class="row">
                     <div class="col-5">
-                        <label>City</label><input type="text" class = "form-control" name="1_member_name" placeholder="" required>
+                        <label>City</label><input type="text" class = "form-control" name="1_member_name" placeholder="">
                     </div>
                     <div class="col-5">
-                        <label>Duration</label><input type="text" class = "form-control" required title="" name="1_member_phone" required>
+                        <label>Duration</label><input type="number" placeholder="In days" class = "form-control" title="" name="1_member_phone">
                     </div>
                         <div class="col-2">
                                       <button type="button" class="btn  btn-circle" name="hide4" onclick="hide(this)">
@@ -115,10 +115,10 @@
                <div class ="d-none" name="Label5">
                         <div class="row">
                                 <div class="col-5">
-                                    <label>City</label><input type="text" class = "form-control" name="1_member_name" placeholder="" required>
+                                    <label>City</label><input type="text" class = "form-control" name="1_member_name" placeholder="">
                                 </div>
                                 <div class="col-5">
-                                    <label>Duration</label><input type="text" class = "form-control" required title="" name="1_member_phone" required>
+                                    <label>Duration</label><input type="number" placeholder="In days" class = "form-control" title="" name="1_member_phone">
                                 </div>
                                 <div class="col-2">
                                       <button type="button" class="btn  btn-circle" name="hide5" onclick="hide(this)">
