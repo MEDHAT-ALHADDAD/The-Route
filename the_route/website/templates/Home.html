@@ -24,12 +24,12 @@
                     <div class="heading pb-5">
                             <h1 class="">Search for cheap trips</h1>
                     </div>
-            <form class=" form-inline" name="Submission" style="margin-left: 10em;" method="post">
+            <form class=" form-inline" name="Submission"   id='test1' style="margin-left: 10em;" method="post">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-5">
-                            <label style="margin-top: 0px;">Origin</label><input  type="text" class="form-control" name="team_name" placeholder="" required>
-                            <label>Date</label> <input type="date" class = "form-control" name="leader_name" placeholder="" required> 
+                            <label style="margin-top: 0px;">Origin</label><input  type="text" class="form-control lasm" name="team_name" placeholder="" >
+                            <label>Date</label> <input type="date" class = "form-control" name="leader_name" placeholder="" > 
                         </div>
                         <div class="col-5">
                             <label style="margin-top: 0px;">Adults</label><input type="number" class="form-control" placeholder="(16+)">
@@ -39,10 +39,10 @@
               
                         <div class="row">
                                 <div class="col-5">
-                                    <label>City</label><input type="text" class = "form-control" name="1_member_name" placeholder="" required>
+                                    <label>City</label><input type="text" class = "form-control lasm" name="1_member_name" placeholder="" >
                                 </div>
                                 <div class="col-5">
-                                    <label>Duration</label><input type="text" class = "form-control" required title="" name="1_member_phone" required>
+                                    <label>Duration</label><input type="text" class = "form-control"  title="" name="1_member_phone" >
                                 </div>
                             </div>
                
@@ -50,10 +50,10 @@
                <div class ="d-none" name="Label1">
                         <div class="row">
                                 <div class="col-5">
-                                    <label>City</label><input type="text" class = "form-control" name="1_member_name" placeholder="" required>
+                                    <label>City</label><input type="text" class = "form-control lasm" name="2_member_name" placeholder="" >
                                 </div>
                                 <div class="col-5">
-                                    <label>Duration</label><input type="text" class = "form-control" required title="" name="1_member_phone" required>
+                                    <label>Duration</label><input type="text" class = "form-control"  title="" name="2_member_phone" >
                                 </div>
                                 <div class="col-2">
                                       <button type="button" class="btn btn-circle myBtn" name="hide1" onclick="hide(this)">
@@ -67,10 +67,10 @@
                <div class ="d-none" name="Label2">
                         <div class="row">
                                 <div class="col-5">
-                                    <label>City</label><input type="text" class = "form-control" name="1_member_name" placeholder="" required>
+                                    <label>City</label><input type="text" class = "form-control lasm" name="3_member_name" placeholder="" >
                                 </div>
                                 <div class="col-5">
-                                    <label>Duration</label><input type="text" class = "form-control" required title="" name="1_member_phone" required>
+                                    <label>Duration</label><input type="text" class = "form-control"  title="" name="3_member_phone" >
                                 </div>
                                 <div class="col-2">
                                       <button type="button" class="btn  btn-circle" name="hide2" onclick="hide(this)">
@@ -83,10 +83,10 @@
                <div class ="d-none" name="Label3">
                         <div class="row">
                                 <div class="col-5">
-                                    <label>City</label><input type="text" class = "form-control" name="1_member_name" placeholder="" required>
+                                    <label>City</label><input type="text" class = "form-control lasm" name="4_member_name" placeholder="" >
                                 </div>
                                 <div class="col-5">
-                                    <label>Duration</label><input type="text" class = "form-control" required title="" name="1_member_phone" required>
+                                    <label>Duration</label><input type="text" class = "form-control"  title="" name="4_member_phone" >
                                 </div>
                                 <div class="col-2">
                                       <button type="button" class="btn  btn-circle" name="hide3" onclick="hide(this)">
@@ -99,10 +99,10 @@
                <div class ="d-none" name="Label4">
                     <div class="row">
                     <div class="col-5">
-                        <label>City</label><input type="text" class = "form-control" name="1_member_name" placeholder="" required>
+                        <label>City</label><input type="text" class = "form-control lasm" name="5_member_name" placeholder="" >
                     </div>
                     <div class="col-5">
-                        <label>Duration</label><input type="text" class = "form-control" required title="" name="1_member_phone" required>
+                        <label>Duration</label><input type="text" class = "form-control"  title="" name="5_member_phone" >
                     </div>
                         <div class="col-2">
                                       <button type="button" class="btn  btn-circle" name="hide4" onclick="hide(this)">
@@ -115,10 +115,10 @@
                <div class ="d-none" name="Label5">
                         <div class="row">
                                 <div class="col-5">
-                                    <label>City</label><input type="text" class = "form-control" name="1_member_name" placeholder="" required>
+                                    <label>City</label><input type="text" class = "form-control lasm" name="6_member_name" placeholder="" >
                                 </div>
                                 <div class="col-5">
-                                    <label>Duration</label><input type="text" class = "form-control" required title="" name="1_member_phone" required>
+                                    <label>Duration</label><input type="text" class = "form-control"  title="" name="6_member_phone" >
                                 </div>
                                 <div class="col-2">
                                       <button type="button" class="btn  btn-circle" name="hide5" onclick="hide(this)">
@@ -138,7 +138,7 @@
                </button> 
                 </div>
                    <div class="col-5">
-                <button type="submit" class = "btn btn-success btn-lg" name="group_register">
+                <button type="submit" method="POST" class = "btn btn-success btn-lg" name="group_register">
                    <i class="fas fa-search"></i>  Search
                </button>
               </div> 

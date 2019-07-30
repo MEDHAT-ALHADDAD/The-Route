@@ -87,33 +87,146 @@ var scrolly = 0.63 * window.screen.height;
 scrly.setAttribute("style", "height:" + scrolly + "px");
 // console.log(scrly);
 
+// **********************************
 
+document.addEventListener('DOMContentLoaded', () => {
 
-$(document).ready(function () {
-  $("#test").submit(function (event) {
+  document.querySelector('#test').onsubmit = () => {
+
+    // Initialize new request
+    const request = new XMLHttpRequest();
+    // const currency = document.querySelector('#currency').value;
+
     let booo = [];
-let baa = document.getElementsByClassName('lasm');
+    let baa = document.getElementsByClassName('lasm');
+    // console.log(baa);
     for (let index = 0; index < btn_del.length; index++) {
       (function (index) {
-        booo[index] = ((baa[index].innerHTML).replace("\n","")).trim();
-        console.log((booo[index].replace("\n","")).trim());
-        
+        booo[index] = ((baa[index].innerHTML).replace("\n", "")).trim();
+        // console.log((booo[index].replace("\n", "")).trim());
+
       })(index);
     }
-    var myJSON = JSON.stringify(booo);
-    event.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "/results/",
-      data: {
-        'Cities_Results': myJSON // from form
-      },
-      success: function () {
-        console.log("helllo");
+    let myJSON = JSON.stringify(booo);
+    console.log(myJSON);
+    request.open('POST', '/results/');
+
+    // Callback function for when request completes
+    request.onload = () => {
+12
+      // Extract JSON data from request
+      const data = JSON.parse(request.responseText);
+      console.log(data);
+
+      // Update the result div
+      if (true) {
+        console.log("sadkvod,l");
         
-        $('#message').html("<h2>Contact Form Submitted!</h2>")
+        // console.log(data);
+        // ~~code here 
+        let resultf = document.getElementById('result_data');
+        let results12 = data.results;
+        resultf.innerHTML = '';
+        let asdfghjkl = "";
+        for(let i=0 ; i < results12.length ; i++){
+          console.log(i);
+          asdfghjkl += "<tr>";
+          for (var key in results12[i]) {
+            // check if the property/key is defined in the object itself, not in parent
+              asdfghjkl += "<td>";
+            if (results12[i].hasOwnProperty(key)) {           
+                console.log(key, results12[i][key]);
+                asdfghjkl += results12[i][key];
+            }
+            asdfghjkl += "</td>";
+          }
+          asdfghjkl += "</tr>";
+          // resultf.innerHTML += "<tr>";
+          //   resultf.innerHTML += "<td>";
+          //   // console.log(result12[i][j]);
+          //   resultf.innerHTML += (results12[i].no);
+          //   resultf.innerHTML += "</td>";
+
+          //   resultf.innerHTML += "<td>";
+          //   resultf.innerHTML +=(results12[i].From);
+          //   resultf.innerHTML += "</td>";
+
+          //   resultf.innerHTML += "<td>";
+          //   resultf.innerHTML +=(results12[i].To);
+          //   resultf.innerHTML += "</td>";
+            
+          //   resultf.innerHTML += "<td>";
+          //   resultf.innerHTML +=(results12[i].Flight_No);
+          //   resultf.innerHTML += "</td>";
+            
+          //   resultf.innerHTML += "<td>";
+          //   resultf.innerHTML +=(results12[i].Date);
+          //   resultf.innerHTML += "</td>";
+            
+          //   resultf.innerHTML += "<td>";
+          //   resultf.innerHTML +=(results12[i].Price);
+          //   resultf.innerHTML += "</td>";
+
+          // // }
+          // resultf.innerHTML += "</tr>";
+        }
+        console.log(asdfghjkl);
+        
+        resultf.innerHTML += asdfghjkl;
+        
+        
+        
+        // const contents = `1 USD is equal to ${data.rate} ${currency}.`
+        // document.querySelector('#result').innerHTML = contents;
+      } else {
+        console.log("error");
+        
+        // document.querySelector('#result').innerHTML = 'There was an error.';
       }
-    });
+    }
+
+    // Add data to send with request
+
+    const data = new FormData();
+    data.append('Cities_Results', myJSON);
+
+    // Send request
+
+
+    request.send(data);
     return false;
-  });
+  };
+
 });
+
+
+// $(document).ready(function () {
+//   $("#test").submit(function (event) {
+//     let booo = [];
+// let baa = document.getElementsByClassName('lasm');
+// console.log(baa);
+
+//     for (let index = 0; index < btn_del.length; index++) {
+//       (function (index) {
+//         booo[index] = ((baa[index].innerHTML).replace("\n","")).trim();
+//         console.log((booo[index].replace("\n","")).trim());
+
+//       })(index);
+//     }
+//     var myJSON = JSON.stringify(booo);
+//     event.preventDefault();
+//     $.ajax({
+//       type: "POST",
+//       url: "/results/",
+//       data: {
+//         'Cities_Results': myJSON // from form
+//       },
+//       success: function () {
+//         // console.log(data);
+
+//         $('#message').html("<h2>Contact Form Submitted!</h2>")
+//       }
+//     });
+//     return false;
+//   });
+// });
