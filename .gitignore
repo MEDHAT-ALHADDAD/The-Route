@@ -111,3 +111,4 @@ media/
 !**/migrations
 !**/migrations/__init__.py
 .vscode/settings.json
+.vscode/settings.json
