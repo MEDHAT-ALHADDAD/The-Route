@@ -87,33 +87,26 @@ var scrolly = 0.63 * window.screen.height;
 scrly.setAttribute("style", "height:" + scrolly + "px");
 // console.log(scrly);
 
+let baa = [];
 
 
 $(document).ready(function () {
   $("#test").submit(function (event) {
-    let booo = [];
-let baa = document.getElementsByClassName('lasm');
-    for (let index = 0; index < btn_del.length; index++) {
-      (function (index) {
-        booo[index] = ((baa[index].innerHTML).replace("\n","")).trim();
-        console.log((booo[index].replace("\n","")).trim());
-        
-      })(index);
-    }
+    let booo = ['london','cairo','paris','moscow'];
     var myJSON = JSON.stringify(booo);
     event.preventDefault();
     $.ajax({
       type: "POST",
       url: "/results/",
       data: {
-        'Cities_Results': myJSON // from form
+        'Cities_Results':  myJSON// from form
       },
       success: function () {
-        console.log("helllo");
-        
         $('#message').html("<h2>Contact Form Submitted!</h2>")
       }
     });
     return false;
   });
 });
+
+
