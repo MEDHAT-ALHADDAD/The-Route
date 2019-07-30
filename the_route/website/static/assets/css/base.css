@@ -14,16 +14,15 @@
      border-radius: 0px;
      width:300px;
  }
- .container-fluid .btn-circle {
+ .container-fluid .col-2 .btn-circle {
       width: 30px;
       height: 30px;
       border-radius: 25px;
       margin-top: 3em;
       font-size: 20px;
       float: left;
-      padding-bottom: 20px;
-      padding-right: 20px;
-      color: red;
+      padding: 5px;
+      color: #f74945;
       background: transparent;
   }
 
