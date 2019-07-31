@@ -9,7 +9,7 @@ from .Algo import Algo, node, flight, CONST
 import datetime
 
 
-
+@csrf_exempt
 def home(request):
     return render(request,'home.html')
 
@@ -30,22 +30,20 @@ def results(request):
     # data accepted by the result page sotred in list of dicts (res)
 
     res = []
-    # res = [
-    #     {"no":"1","From":"Cairo","To":"London","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
-    #     {"no":"2","From":"London","To":"paris","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
-    #     {"no":"3","From":"paris","To":"Rome","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
-    #     {"no":"4","From":"Rome","To":"Moscow","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
-    #     {"no":"5","From":"Moscow","To":"Cairo","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
-    #     {"no":"6","From":"Cairo1","To":"London1","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
-    #     {"no":"7","From":"Paris1","To":"Rome1","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
-    #     {"no":"8","From":"Rome1","To":"LA","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
-    #     {"no":"9","From":"LA","To":"Cairo","Flight_No":"@123","Date":"12/03/2020","Price":"500$"}
-    #     ]
+    res = [
+        {"no":"1","From":"Cairo","To":"London","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+        {"no":"2","From":"London","To":"paris","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+        {"no":"3","From":"paris","To":"Rome","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+        {"no":"4","From":"Rome","To":"Moscow","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+        {"no":"5","From":"Moscow","To":"Cairo","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+        {"no":"6","From":"Cairo1","To":"London1","Flight_No":"@123","Date":"12/03/2020","Price":"500$"},
+        {"no":"7","From":"Paris1","To":"Rome1","Flight_No":"@123","Date":"12/03/2020","Price":"500$"}
+        ]
     city = ["atlanta","chicago","dubai","los angeles","london", "tokyo"]
     for result in res:
         city.append(result['From'])
 
-    if request.method == "POST" and request.is_ajax():
+    if request.method == "POST":
         message = "Ajax"
         val = request.POST.get('Cities_Results', '')
         Cities_list = json.loads(val)
@@ -62,18 +60,25 @@ def results(request):
         #     {"no":"2","From":"London","To":"paris","Flight_No":"@123","Date":"12/03/2020","Price":"500$"}
         #     ]
         city = []
-        for result,i in enumerate(res):
+        valuesa = []
+        for i, result in enumerate(res):
+            # print(result)
             result = result.getJSON(i)
-            city.append(result.getJSON['From'])
+            valuesa.append(result)
+            city.append(result['From'])
+            # print(i)
+            # print(result)
         print(city)
+        print(valuesa)
         context = {
-        "results": res,
+        "results": valuesa,
         "shortcity": city
         }
-        return JsonResponse(request,'request_page/Results.html',context)
+        return JsonResponse(context)
     
     else:
         message = "Not Ajax"
+        print("kdlsmfkvifmdoimdfikfmkidf")
         context = {
             "results": res,
             "shortcity": city
