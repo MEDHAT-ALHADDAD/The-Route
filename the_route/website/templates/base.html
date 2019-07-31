@@ -3,11 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{% static 'assets/css/Footer-with-button-logo.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/all.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Footer-with-button-logo.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/all.css' %}">
     <link rel="stylesheet" type="text/css" media="screen" href="{% static 'assets/css/main.css'  %}" />
     <link rel="stylesheet" type="text/css" media="screen" href="{% static 'assets/css/rec.css'  %}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static 'assets/css/contact.css'  %}" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
     integrity="sha384- 
     fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" 
@@ -24,6 +26,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <title>Document</title>
+
     <style type="text/css">
         .container{
           width: 70%;
@@ -262,13 +265,14 @@
               pointer-events: all !important;
             }
     </style>
-</head>
 
-<body>
+
+<body class="m-0">
 
     <!-- navbar to be replaced by the one in layout.html -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="/Home"><img src="{% static 'assets/img/logo/logo.png' %}" alt="LOGO" style="max-width: 100px; max-height: 100px"></a>
+
+            <a class="navbar-brand" href="/home"><img src="{% static 'assets/img/logo/logo.png' %}" alt="LOGO" style="max-width: 130px; max-height: 130px"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -276,22 +280,25 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                            <a class="nav-item nav-link active" href="/Home">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                            <a class="nav-item nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                             <a class="nav-item nav-link" href="/rec">Recommendations</a>
                     </li>
                     <li class="nav-item">
-                            <a class="nav-item nav-link dropdown-item" href="/results">temp result</a>  
+                            <a class="nav-item nav-link" href="/results">temp result</a>  
                     </li>
                 </ul>
-              {% if user.is_authenticated %}
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin: 3px"><a class="nav-item nav-link" style="color: white" href="{% url 'logout' %}"> Logout </a></button>
-              {% else %}
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin: 3px"><a class="nav-item nav-link" style="color: white" href="{% url 'register' %}"> Register </a></button>
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin: 3px"><a class="nav-item nav-link" style="color: white" href="{% url 'login' %}"> Login </a></button>
+                <ul class="navbar-nav" style="margin-right: 2em;">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item active"><a class="nav-item nav-link" href="{% url 'logout' %}"> Logout </a></li>
+                    {% else %}
+                    <li><a class="nav-item nav-link" href="{% url 'register' %}"> Register </a></li>
+                    <li><a class="nav-item nav-link" href="{% url 'login' %}"> Login </a></li>
               {% endif %}
+              
+                </ul>
                     
             </div>
         </nav>
@@ -316,47 +323,53 @@
 
 </body>
 
-<footer id="myFooter" class="bg-dark text-light p-1">
+<footer id="myFooter" class="bg-dark text-light p-0">
     <div class="container-fluid">
         <div class="row " style="margin-bottom: 0vw">
-            <div class="col-lg-3 col-sm-12">
-                <h2 class="logo"><a href="#"> <img src="{% static 'assets/img/logo/logo.png' %}" alt="LOGO" style="max-width: 200px; max-height: 200px"> </a></h2>
+
+            <div class="col-3">
+                <h2 class="logo"><a href="#"> <img src="{% static 'assets/img/logo/logo.png' %}"  alt="LOGO" style="max-width: 200px; max-height: 200px; margin-top: .5em;"> </a></h2>
             </div>
-            <div class="col-lg-2 col-sm-12">
+            <div class="col-2">
                 <h5>Get started</h5>
                 <ul>
-                    <li><a class="fa-1x " href="#">Home</a></li>
+                    <li><a class="fa-1x " href="/home">Home</a></li>
                     <li><a href="#">Sign up</a></li>
                 </ul>
             </div>
-            <div class="col-lg-2 col-sm-12">
+
+            <div class="col-2">
                 <h5>About us</h5>
                 <ul>
                     <li><a href="#">Company Info.</a></li>
-                    <li><a href="#">Contact us</a></li>
+                    <li><a href="{% url 'contactus' %}">Contact us</a></li>
                 </ul>
             </div>
-            <div class="col-lg-2 col-sm-12">
+            <div class="col-2">
                 <h5>Support</h5>
                 <ul>
                     <li><a href="#">FAQ</a></li>
                     <li><a href="#">Forums</a></li>
                 </ul>
             </div>
-            <div class="col-lg-3 col-sm-12">
+
+            <div class="col-3">
+
                 <div class="social-networks">
                     <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
                     <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
                     <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
                 </div>
-                <button type="button" class="btn btn-default text-light bg-info">Contact us</button>
+                <button type="button" class="btn btn-default text-light bg-info" href="#" >Contact us</button>
             </div>
         </div>
     </div>
-    <div class="footer-copyright">
-        <p>© 2019 Copyright Text </p>
-    </div>
+
     
   </footer>
+  <div class="footer-copyright bg-dark">
+      <p class="text-light text-center">© 2019 Copyright Text </p>
+  </div>
   
 </html>
+

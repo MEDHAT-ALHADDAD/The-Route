@@ -1,0 +1,117 @@
+ input
+ {
+    margin-left: 10px;
+ }
+ label{
+    font-size: 24px;
+    margin-top:20px;
+    margin-right:10px;
+    margin-left: 10px;
+    float: left;
+ }
+
+ .container-fluid .form-control{
+     border-radius: 0px;
+     width:300px;
+ }
+ .container-fluid .col-2 .btn-circle {
+      width: 30px;
+      height: 30px;
+      border-radius: 25px;
+      margin-top: 3em;
+      font-size: 20px;
+      float: left;
+      padding: 5px;
+      color: #f74945;
+      background: transparent;
+  }
+
+ .form-inline .container-fluid .form-control {
+        font-size: 23px;
+        display: inline-block;
+        height: 40px;
+        width: 300px;
+        vertical-align: middle;
+  }
+ h1 
+ {
+    font-family: noodle;
+    text-align: center;
+    text-shadow:0px 4px 10px rgba(81, 79, 74,.7);
+ }
+ .check{
+  margin-top: 20px;
+  margin-right: 5px;
+  margin-left: 0;
+ }
+.form-inline .btn-lg
+{
+  /* margin-left: 42%; */
+  margin-top: 30px;
+}
+
+#sub
+{
+  margin-top: 30px;
+  display: block;
+}
+
+#myFooter{
+    clear: both;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    height: 200px;
+    
+}
+body
+{
+    min-height: 100%;
+    margin-bottom: 70px;
+    padding-bottom: 200px;
+}
+html{
+    min-height: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.form-group input
+{
+    border-radius: 30px;
+}
+.nav-link
+{
+    margin-left: 20px;
+}
+.navbar-nav li a:hover, .navbar-nav li.active a {
+     color: white !important;
+    transition: all 0.4s ease;
+}
+button {
+  text-decoration: none;
+   }
+
+button:hover, button:focus {
+    
+    color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none; }
+/* .footer-copyright p{margin-bottom: 0px;} */
+
+
+    button:disabled {
+      cursor: not-allowed;
+      pointer-events: all !important;
+    }
+    input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}

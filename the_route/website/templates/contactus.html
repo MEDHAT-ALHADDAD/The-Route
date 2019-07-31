@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<style>
+
+    /* NEW */
+    .banner{
+        position: absolute;
+        /* top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0; */
+        height: 150vh;
+
+        width: 100vw;
+        object-fit: cover;
+        /* z-index: -1; */
+    }
+    .main-img-div{
+        width: 100vw;
+        position: relative;
+        /* z-index: -1; */
+    }
+
+    .main-img-div:after {
+        content: '';
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.7);
+        width: 100vw;
+        height: 150vh;
+    }
+   
+</style>
+<body>
+	<div class="main-img-div">
+		<img src="https://www.tokkoro.com/picsup/5228117-mountain-sky-lake-bay-water-blue-dark-dusk-pastel-long-exposure-landscape-nature-coast-beach-cloud-sunset-ocean-sea-tree-creative-commons-images.jpg" class="banner" alt="banner"/>
+	</div>
+    <div class="container">
+		<div class="row">
+			<div class="col-lg-7 mt-5 pt-5 text-light">
+                <div class="mr-5 pr-5">
+				<h1>Contact us</h1>
+				<p class="p-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates dolorum vero doloremque officia hic facere, quas praesentium facilis quam modi quod? Voluptates, non quia. Repellendus mollitia obcaecati molestiae vitae quae officia porro amet repellat provident asperiores earum ad nostrum debitis possimus alias, atque velit vero culpa ex. Quia maxime non, et atque facere dolores voluptate vitae aspernatur ipsum assumenda. Sapiente quod illum delectus neque maxime, officia architecto? Officia atque dolores aut aspernatur suscipit voluptatem nemo dolorum dolor nobis doloremque omnis ut eum tempore debitis tenetur consequuntur, quo enim voluptatum sit accusamus, pariatur excepturi quos voluptatibus. Quod quasi sunt minus autem?</p>
+			</div>
+        </div>
+			<div class="col-lg-5">
+				<section class="section2"> 
+					<div class="contactform">
+					<h5>Drop us a line...</h5>
+						<form action="#">
+							<label for="firstname">
+								<i class="cntfrmicn fa fa-user"></i>
+								<input name="firstname" class="form-fields" type="text">
+							</label>
+							<label for="email">
+								<i class="cntfrmicn fa fa-envelope"></i>
+								<input name="email" class="form-fields" type="text">
+							</label>
+							<label for="textarea">
+								<i class="cntfrmicn fa fa-comment"></i>
+								<textarea class="form-fields" name="textarea" id="" cols="30" rows="10"></textarea>
+							</label>
+							<button class="form-fields button" value="Send" type="submit" style="margin-left: 0.8em;">Send <i class="fa fa-paper-plane"></i></button>
+						</form>
+					</div>
+				</section>
+			</div>
+			</div>
+	</div>
+</body>
+{% endblock content %}

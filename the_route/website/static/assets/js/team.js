@@ -19,6 +19,10 @@ function checkFields(){
         return false;
     if(document.forms["Submission"]["leader_name"].value === "")
         return false;
+    if(document.forms["Submission"]["1st_City"].value === "")
+        return false;
+    if(document.forms["Submission"]["1st_Duration"].value === "")
+        return false;
     return true;
 }
 function show(){
@@ -47,7 +51,7 @@ function show(){
     }
     else
     {
-        alert("Fill in required fields and last member first");
+        alert("Fill in required fields");
     }
 }
 function hide(objButton){
