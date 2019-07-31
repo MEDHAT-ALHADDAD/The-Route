@@ -9,7 +9,6 @@
         color: #404040;
         position: relative;
     }
-
     .reg-title:after {
         content: '';
         background: #404040;
@@ -20,22 +19,19 @@
         top: 100%;
         transform: translate(-50%, 100%);
     }
-
     .reg-wrapper {
         box-shadow: 0px 0px 5px 1px #ccc;
-        background-color: rgba(255, 255, 255, 1);
+        background-color: rgba( 255,255, 255,1);
         padding: 30px;
         border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 1);
         margin: 50px;
     }
-
-    .reg-wrapper:hover {
+    .reg-wrapper:hover{
         box-shadow: 0px 0px 40px 16px rgba(18, 18, 18, 0.7)
     }
-
     /* NEW */
-    .banner {
+    .banner{
         position: absolute;
         /* top: 0;
         left: 0;
@@ -46,8 +42,7 @@
         object-fit: cover;
         /* z-index: -1; */
     }
-
-    .main-img-div {
+    .main-img-div{
         width: 100vw;
         position: relative;
         /* z-index: -1; */
@@ -56,25 +51,29 @@
     .main-img-div:after {
         content: '';
         position: absolute;
-        background-color: rgba(0, 0, 0, 0.7);
+        background-color: rgba(0, 0, 0, 0.5);
         width: 100vw;
         height: 100vh;
     }
-
     .full-height {
-        height: 100vh;
+        height: 100vh; 
     }
-
-    .pargraphe {
+    .pargraphe{
         position: relative;
         color: white;
         font-size: 26px;
+        margin-top: 8em;
         left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%,-50%);
         margin-right: 100px;
     }
+    .back{
+        background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://www.tokkoro.com/picsup/5228117-mountain-sky-lake-bay-water-blue-dark-dusk-pastel-long-exposure-landscape-nature-coast-beach-cloud-sunset-ocean-sea-tree-creative-commons-images.jpg);
+        background-position: center;
+        background-size: cover;
 
+    }
     /* .signform-div{
         background-color: white;
     }
@@ -84,14 +83,9 @@
     } */
 </style>
 
-<div class="main-img-div">
-    <img src="https://www.tokkoro.com/picsup/5228117-mountain-sky-lake-bay-water-blue-dark-dusk-pastel-long-exposure-landscape-nature-coast-beach-cloud-sunset-ocean-sea-tree-creative-commons-images.jpg"
-        class="banner" alt="banner" />
 </div>
-<div class="container-fluid">
-    <div class="row">
-
-        <div class="col-lg-6 col-md-12 col-sm-12 pargraphe-div full-height">
+<div class="row justify-content-center align-items-center back">
+        <div class="col-8 pargraphe-div">
             <p class="pargraphe">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
@@ -107,7 +101,7 @@
         <div class="col-4 signform-div">
             <!-- Login Form -->
             {% load crispy_forms_tags %}
-            <div class="content-section container-fluid reg-wrapper">
+            <div class="reg-wrapper">
                 <form method="POST" class="login-form" action="">
                     {% csrf_token %}
                     <fieldset class="form-group">
@@ -117,7 +111,7 @@
                         {{ form|crispy }}
                     </fieldset>
                     <div class="form-group">
-                        <button class="btn btn-outline-info" type="submit">Login</button>
+                        <button class="btn btn-primary" type="submit">Login</button>
                     </div>
                 </form>
                 <div class="border-top pt-3">

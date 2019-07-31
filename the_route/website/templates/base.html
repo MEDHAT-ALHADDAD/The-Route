@@ -32,7 +32,7 @@
 
     <!-- navbar to be replaced by the one in layout.html -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="/home"><img src="{% static 'assets/img/logo/logo.png' %}" alt="LOGO" style="max-width: 100px; max-height: 100px"></a>
+            <a class="navbar-brand" href="/home"><img src="{% static 'assets/img/logo/logo.png' %}" alt="LOGO" style="max-width: 130px; max-height: 130px"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -40,22 +40,25 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                            <a class="nav-item nav-link active" href="/home">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                            <a class="nav-item nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                             <a class="nav-item nav-link" href="/rec">Recommendations</a>
                     </li>
                     <li class="nav-item">
-                            <a class="nav-item nav-link dropdown-item" href="/results">temp result</a>  
+                            <a class="nav-item nav-link" href="/results">temp result</a>  
                     </li>
                 </ul>
-              {% if user.is_authenticated %}
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin: 3px"><a class="nav-item nav-link" style="color: white" href="{% url 'home' %}"> Logout </a></button>
-              {% else %}
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin: 3px; border: 0px 0px 0px;"><a class="nav-item nav-link" style="color: white" href="{% url 'register' %}"> Register </a></button>
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin: 3px"><a class="nav-item nav-link" style="color: white" href="{% url 'login' %}"> Login </a></button>
+                <ul class="navbar-nav" style="margin-right: 2em;">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item active"><a class="nav-item nav-link" href="{% url 'logout' %}"> Logout </a></li>
+                    {% else %}
+                    <li><a class="nav-item nav-link" href="{% url 'register' %}"> Register </a></li>
+                    <li><a class="nav-item nav-link" href="{% url 'login' %}"> Login </a></li>
               {% endif %}
+              
+                </ul>
                     
             </div>
         </nav>
@@ -84,7 +87,7 @@
     <div class="container-fluid">
         <div class="row " style="margin-bottom: 0vw">
             <div class="col-3">
-                <h2 class="logo"><a href="#"> <img src="{% static 'assets/img/logo/logo.png' %}" alt="LOGO" style="max-width: 200px; max-height: 200px"> </a></h2>
+                <h2 class="logo"><a href="#"> <img src="{% static 'assets/img/logo/logo.png' %}"  alt="LOGO" style="max-width: 200px; max-height: 200px; margin-top: .5em;"> </a></h2>
             </div>
             <div class="col-2">
                 <h5>Get started</h5>
