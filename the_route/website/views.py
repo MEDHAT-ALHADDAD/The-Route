@@ -13,6 +13,11 @@ import datetime
 def home(request):
     return render(request,'home.html')
 
+def afterReg(request):
+    if request.method == "POST":
+        return redirect('../home/')
+    return render(request,'afterReg.html')
+
 def contactus(request):
     return render(request,'contactus.html')
 
@@ -85,7 +90,7 @@ def register(request):
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('../home/')
+            return redirect('../afterReg/')
     else:
         form =UserRegisterForm()
     return render(request, 'auth/register.html', {'form': form})
